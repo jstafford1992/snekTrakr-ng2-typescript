@@ -1,7 +1,7 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "snekTrakr",
+  "author": "Jimmy Stafford",
+  "homepage": "https://github.com/jstafford1992/snekTrakr-ng2-typescript",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
