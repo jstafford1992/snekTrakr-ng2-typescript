@@ -10,11 +10,11 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class ApiUrl {
+  url: string
 
-  private url = "https://snek-trakr.herokuapp.com/";
 
   constructor(public http: Http) {
-    console.log('Hello ApiUrl Provider');
+    this.url = "https://snek-trakr.herokuapp.com/";
   }
 
 

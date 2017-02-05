@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/snakes';
 import { ContactPage } from '../pages/contact/clutches';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ApiUrl } from '../providers/api-url';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ApiUrl]
 })
 export class AppModule {}
