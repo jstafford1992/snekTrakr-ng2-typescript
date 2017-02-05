@@ -27,6 +27,6 @@ import { UserLogin } from '../providers/user-login';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ApiUrl, UserLogin]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
