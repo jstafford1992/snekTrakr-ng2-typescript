@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/snakes';
 import { ContactPage } from '../pages/contact/clutches';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { UserAuth } from '../providers/user-auth';
 
 
 @NgModule({
@@ -26,6 +27,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, UserAuth]
 })
 export class AppModule {}
