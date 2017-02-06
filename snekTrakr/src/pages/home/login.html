@@ -28,4 +28,18 @@
     <button type="button" name="login-button" >Login</button>
     <button type="button" name="signup-button">Signup</button>
   </div>
+
+  <form #FormLogin="ngForm" (ngSubmit)="login(FormLogin)">
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input [(ngModel)]="FormLogin.email" name="email" type="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [(ngModel)]="FormLogin.password" name="password" type="password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <button [disabled]="!FormLogin.form.valid" type="submit" full ion-button>Login</button>
+    </ion-item>
+  </form>
 </ion-content>
