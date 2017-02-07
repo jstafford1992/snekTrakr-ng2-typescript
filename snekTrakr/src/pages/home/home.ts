@@ -31,6 +31,8 @@ export class HomePage {
       console.log(data)
       if(data.token){
         // this.navCtrl.setRoot(HomePage);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user_id', data.id);
         console.log('LOGGED IN!')
       } else{
         FormLogin.password = '';
