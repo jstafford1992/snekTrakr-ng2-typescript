@@ -95,7 +95,7 @@ export class UserAuth {
   private(){
     let headers = new Headers();
     this.createAuthorizationHeader(headers);
-    return this.http.get(this.baseUrl+'private', {
+    return this.http.get(this.baseUrl+'login', {
       headers: headers
     }).map(res => res.json());
   }

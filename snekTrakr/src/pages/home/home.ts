@@ -30,18 +30,6 @@ export class HomePage {
 
   login(FormLogin){
     this.auth.login(FormLogin.value).subscribe(data => {
-      // console.log(data)
-
-      if(!data.token){
-        // console.log(data)
-        // FormLogin.password = '';
-        let alert = this.alertCtrl.create({
-          title: 'Login Failed',
-          subTitle: data.message,
-          buttons: ['OK']
-        })
-        alert.present();
-      }
 
       if(data.token){
         // this.navCtrl.setRoot(HomePage);
@@ -50,8 +38,24 @@ export class HomePage {
         console.log('LOGGED IN!')
         this.navCtrl.setRoot(AboutPage);
         // this.navCtrl.push(AboutPage);
+        let alert = this.alertCtrl.create({
+          title: "Login Successful!",
+          buttons: ["OK"]
+        })
+        alert.present();
       }
 
+    }, err => {
+      if(err){
+        // console.log(err);
+        let message = JSON.parse(err._body);
+        let alert = this.alertCtrl.create({
+          title: 'Oops!',
+          subTitle: message.message,
+          buttons: ['OK']
+        })
+        alert.present();
+      }
     })
   }
 
