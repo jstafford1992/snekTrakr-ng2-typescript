@@ -6,7 +6,7 @@ import { ContactPage } from '../pages/contact/clutches';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserAuth } from '../providers/user-auth';
-
+import { Storage } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,6 @@ import { UserAuth } from '../providers/user-auth';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, UserAuth]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, UserAuth, Storage]
 })
 export class AppModule {}

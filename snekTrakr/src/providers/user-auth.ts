@@ -70,7 +70,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import { Storage } from '@ionic/storage';
 
 
 
@@ -89,7 +89,7 @@ export class UserAuth {
   createAuthorizationHeader(headers: Headers){
     headers.append('Accept', 'application/json')
     headers.append('Content-type', 'application/json');
-    headers.append('Authorization', window.localStorage.getItem('token'));
+    // headers.append('Authorization', window.localStorage.getItem('token'));
   }
 
   private(){
@@ -127,3 +127,17 @@ export class UserAuth {
   }
 
 }
+
+//Storage setup from docs????????
+// export class MyApp {
+//   constructor(storage: Storage) {
+//
+//      // set a key/value
+//      storage.set('name', 'Max');
+//
+//      // Or to get a key/value pair
+//      storage.get('name').then((val) => {
+//        console.log('Your name is', val);
+//      })
+//   }
+// }
