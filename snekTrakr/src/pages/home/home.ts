@@ -11,7 +11,7 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class HomePage {
 
-  cred = {email: '', password: ''};
+  // cred = {email: '', password: ''};
 
   constructor(public navCtrl: NavController,
     private auth: UserAuth,
