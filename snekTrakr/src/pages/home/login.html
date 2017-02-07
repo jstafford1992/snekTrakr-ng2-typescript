@@ -6,28 +6,6 @@
 
 <ion-content padding>
   <h1>This will be the Login page</h1>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-
-  <div padding class="login-input-form">
-    <div class="email-input">
-      <label for="email">Email</label>
-      <input type="email" name="login" value="">
-    </div>
-    <div class="password-input">
-      <label for="password">Password</label>
-      <input type="password" name="password" value="">
-    </div>
-    <button type="button" name="login-button" >Login</button>
-    <button type="button" name="signup-button">Signup</button>
-  </div>
 
   <form #FormLogin="ngForm" (ngSubmit)="login(FormLogin)">
     <ion-item>

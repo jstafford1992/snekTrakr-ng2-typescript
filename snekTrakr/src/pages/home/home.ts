@@ -31,15 +31,10 @@ export class HomePage {
   login(FormLogin){
     this.auth.login(FormLogin.value).subscribe(data => {
       // console.log(data)
-      if(data.token){
-        // this.navCtrl.setRoot(HomePage);
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('user_id', data.id);
-        console.log('LOGGED IN!')
-        this.navCtrl.setRoot(AboutPage);
-        // this.navCtrl.push(AboutPage);
-      } else{
-        FormLogin.password = '';
+
+      if(!data.token){
+        // console.log(data)
+        // FormLogin.password = '';
         let alert = this.alertCtrl.create({
           title: 'Login Failed',
           subTitle: data.message,
@@ -47,6 +42,16 @@ export class HomePage {
         })
         alert.present();
       }
+
+      if(data.token){
+        // this.navCtrl.setRoot(HomePage);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user_id', data.id);
+        console.log('LOGGED IN!')
+        this.navCtrl.setRoot(AboutPage);
+        // this.navCtrl.push(AboutPage);
+      }
+
     })
   }
 
