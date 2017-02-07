@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UserAuth } from '../../providers/user-auth';
 import { NavController, AlertController } from 'ionic-angular';
+import { AboutPage } from '../about/snakes';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
@@ -28,12 +30,14 @@ export class HomePage {
 
   login(FormLogin){
     this.auth.login(FormLogin.value).subscribe(data => {
-      console.log(data)
+      // console.log(data)
       if(data.token){
         // this.navCtrl.setRoot(HomePage);
         localStorage.setItem('token', data.token);
         localStorage.setItem('user_id', data.id);
         console.log('LOGGED IN!')
+        this.navCtrl.setRoot(AboutPage);
+        // this.navCtrl.push(AboutPage);
       } else{
         FormLogin.password = '';
         let alert = this.alertCtrl.create({
