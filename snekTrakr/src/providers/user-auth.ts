@@ -117,7 +117,7 @@ export class UserAuth {
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('user_id');
-    console.log('Loggout in USER-AUTH');
+    // console.log('Loggout in USER-AUTH');
   }
 
   private extractData(res: Response){
