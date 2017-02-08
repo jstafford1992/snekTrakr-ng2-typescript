@@ -106,7 +106,7 @@ export class UserAuth {
   }
 
   isLogged(){
-    if(window.localStorage.getItem('token')){
+    if(localStorage.getItem('token')){
       // console.log('Token Exists');
       return true
     }else{
@@ -117,14 +117,15 @@ export class UserAuth {
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('user_id');
-
-    return console.log('Loggout in USER-AUTH');
+    console.log('Loggout in USER-AUTH');
   }
 
   private extractData(res: Response){
     let body = res.json();
-    if(body.succes === true){
-      window.localStorage.setItem('token', body.token);
+    // console.log("extractData", body);
+    if(body.token){
+      localStorage.setItem('token', body.token);
+      localStorage.setItem('user_id', body.id);
     };
     return body || {};
   }

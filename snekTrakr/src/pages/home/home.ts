@@ -17,25 +17,14 @@ export class HomePage {
     private auth: UserAuth,
     public alertCtrl: AlertController ) {  }
 
-  // public login() {
-  //   this.auth.login(this.cred.email, this.cred.password).subscribe(allowed => {
-  //     if(allowed){
-  //       console.log("Login success?")
-  //     } else {
-  //       // this.show
-  //       console.log("Failed Login");
-  //     }
-  //   })
-  // }
-
   login(FormLogin){
     this.auth.login(FormLogin.value).subscribe(data => {
 
       if(data.token){
         // this.navCtrl.setRoot(HomePage);
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('user_id', data.id);
-        console.log('LOGGED IN!')
+        // localStorage.setItem('token', data.token);
+        // localStorage.setItem('user_id', data.id);
+        // console.log('LOGGED IN!')
         this.navCtrl.setRoot(AboutPage);
         // this.navCtrl.push(AboutPage);
         let alert = this.alertCtrl.create({
@@ -60,9 +49,15 @@ export class HomePage {
   }
 
   logout(){
-    // localStorage.removeItem('token');
-    // localStorage.removeItem('user_id');
-    this.auth.logout();
+    if(localStorage.getItem('token')){
+      this.auth.logout();
+      let alert = this.alertCtrl.create({
+        title: 'Logout!',
+        subTitle: "You've Logged Out",
+        buttons: ['OK']
+      })
+      alert.present();
+    }
   }
 
 }
