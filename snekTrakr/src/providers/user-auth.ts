@@ -107,6 +107,7 @@ export class UserAuth {
 
   isLogged(){
     if(window.localStorage.getItem('token')){
+      // console.log('Token Exists');
       return true
     }else{
       return false;

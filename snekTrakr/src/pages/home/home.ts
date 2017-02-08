@@ -59,4 +59,8 @@ export class HomePage {
     })
   }
 
+  logout(click){
+    this.auth.logout();
+  }
+
 }
