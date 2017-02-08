@@ -17,4 +17,9 @@ export class SnakesProv {
     console.log('Hello SnakesProv Provider');
   }
 
+
+  getSnakes(){
+    
+  }
+
 }
