@@ -115,8 +115,10 @@ export class UserAuth {
   }
 
   logout(){
-    window.localStorage.removeItem('token');
-    return true;
+    localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
+
+    return console.log('Loggout in USER-AUTH');
   }
 
   private extractData(res: Response){

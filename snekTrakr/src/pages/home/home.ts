@@ -59,7 +59,9 @@ export class HomePage {
     })
   }
 
-  logout(click){
+  logout(){
+    // localStorage.removeItem('token');
+    // localStorage.removeItem('user_id');
     this.auth.logout();
   }
 
