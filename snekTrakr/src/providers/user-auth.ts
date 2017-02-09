@@ -88,8 +88,8 @@ export class UserAuth {
 
   createAuthorizationHeader(headers: Headers){
     headers.append('Accept', 'application/json')
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', localStorage.getItem('token'));
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', "Bearer " +localStorage.getItem('token'));
   }
 
   private(){

@@ -19,20 +19,12 @@ export class AboutPage {
 
   snakes;
 
-  // (ngOnInit() as Observable<any>) => {this.SnakesProv.getAllSnakes().subscribe(res => res.json())}
-
-  // ngOnInit():  void | Observable<any> {
-    //return bla bla bla
-    // return this.SnakesProv.getAllSnakes().subscribe(res => res.json());
-  // }
-
   ngOnInit(){
-    // let id = localStorage.getItem('user_id')
     console.log("inside ngOnInit");
     this.snakes = this.SnakesProv.getAllSnakes().subscribe(snakes => {
             this.snakes = snakes;
         });
-    return this.SnakesProv.getAllSnakes().subscribe( res => res.json())
+    return this.SnakesProv.getAllSnakes().subscribe( data => console.log(data))
   }
 
 
