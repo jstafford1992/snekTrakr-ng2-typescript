@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response, Request, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic-angular';
 
 /*
   Generated class for the SnakesProv provider.
@@ -18,8 +20,19 @@ export class SnakesProv {
   }
 
 
-  getSnakes(){
-    
+  getAllSnakes(){
+    let id: string = localStorage.getItem('user_id');
+    let url: string = this.baseUrl+"snakes/"+ id;
+    return this.http.get(url).map(this.extractData);
+  }
+
+  private extractData(res: Response){
+    let body = res.json();
+    console.log("extractData", body);
+    if(body){
+      // console.log(body);
+    };
+    return body || {};
   }
 
 }
