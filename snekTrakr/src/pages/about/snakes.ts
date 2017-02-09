@@ -15,17 +15,21 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController, private auth: UserAuth, private SnakesProv: SnakesProv) {
 
+
   }
 
-  snakes;
+  public snakesArray: Observable<any[]>;
+
+  // snakes;
 
   ngOnInit(){
     console.log("inside ngOnInit");
-    this.snakes = this.SnakesProv.getAllSnakes().subscribe(snakes => {
-            this.snakes = snakes;
-        });
-    return this.SnakesProv.getAllSnakes().subscribe( data => console.log(data))
+    // this.snakesArray = this.SnakesProv.getAllSnakes().subscribe(snakes => {
+    //         this.snakesArray = snakes;
+    //     });
+    return this.SnakesProv.getAllSnakes().subscribe( data => this.snakesArray = data );
   }
+
 
 
 }

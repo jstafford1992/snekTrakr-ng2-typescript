@@ -16,6 +16,32 @@
     repeats will start here for database returns
   </div>
 
+  <div class="">
+    {{snakesArray}}
+    <ion-card *ngFor="let snake of snakesArray">
+
+      <ion-card-header>
+        Name: {{snake.name}}
+        <br>
+        ID: {{snake.id}}
+        <br>
+        img: <img src="{{snake.img_URL}}" alt="picture of snake here"  width="150px" height="50px" />
+        <br>
+        sex: {{snake.sex}}
+        <br>
+        group: {{snake.group}}
+        <br>
+
+
+      </ion-card-header>
+
+      <ion-card-content>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
 
 
 </ion-content>
