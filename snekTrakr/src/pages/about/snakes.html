@@ -8,16 +8,12 @@
 
 <ion-content padding>
   <div class="heading">
-    <h1>Snakes will go here</h1>
+    <h1>All snakes listed here</h1>
   </div>
 
 
   <div class="">
-    repeats will start here for database returns
-  </div>
-
-  <div class="">
-    <ion-card *ngFor="let snake of snakesArray">
+    <ion-card *ngFor="let snake of snakesArray" style="background-color: lightblue;">
 
       <ion-card-header>
         Name: {{snake.name}}
