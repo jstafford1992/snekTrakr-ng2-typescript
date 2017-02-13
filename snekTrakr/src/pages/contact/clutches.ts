@@ -12,4 +12,7 @@ export class ContactPage {
 
   }
 
+  //Next step is to build provider for getting clutches information from api with provider
+  //and pass it down into this component
+
 }
