@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { UserAuth } from '../providers/user-auth';
 import { Storage } from '@ionic/storage';
 import { SnakesProv } from '../providers/snakes-prov';
+import { ClutchProv } from '../providers/clutch-prov';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { SnakesProv } from '../providers/snakes-prov';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, UserAuth, Storage, SnakesProv]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, UserAuth, Storage, SnakesProv, ClutchProv]
 })
 export class AppModule {}

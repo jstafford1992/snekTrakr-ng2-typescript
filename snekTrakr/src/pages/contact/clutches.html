@@ -14,7 +14,37 @@
     </div>
   </div>
   <br>
+  {{clutchesArray}}
+  <ion-card *ngFor="let clutch of clutchesArray">
+    <ion-card-header>
+      Dame:
+      {{clutch.name}}
+      <br>
+      Notes:
+      {{clutch.notes}}
+      <br>
+      Date Layed:
+      {{clutch.date_layed}}
+      <br>
+      Eggs Layed:
+      {{clutch.number_layed}}
+      <br>
+      Number Hatched:
+      {{clutch.number_hatched}}
+      <br>
+      Image-url: 
+      {{clutch.image_url}}
+
+
+
+
+
+    </ion-card-header>
+  </ion-card>
+  <br>
   <ion-list>
+
+
     <ion-list-header>Follow us on Twitter</ion-list-header>
     <ion-item>
       <ion-icon name="ionic" item-left></ion-icon>

@@ -22,7 +22,7 @@ export class ClutchProv {
   createAuthorizationHeader(headers: Headers){
     headers.append('Accept', 'application/json');
     headers.append('Content-type', 'application/json');
-    headers.append('Authorization', "Beareer " +localStorage.getItem('token'));
+    headers.append('Authorization', "Bearer " +localStorage.getItem('token'));
   }
 
 
